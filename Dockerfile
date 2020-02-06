@@ -17,4 +17,5 @@ ENV PATH="${ANT_HOME}/bin/:${JAVA_HOME}:${PATH}"
 RUN ant MakeAuthKey
 RUN ant
 WORKDIR /appinventor-sources/appinventor/buildserver
-CMD ["/usr/lib/google-cloud-sdk/bin/java_dev_appserver.sh", "--port=8888", "--address=0.0.0.0", "../appengine/build/war/", "&", "ant", "RunLocalBuildServer" ]
+COPY startserver.sh startserver.sh
+CMD ["sh", "startserver.sh"]

@@ -5,3 +5,4 @@ services:
         image: custom-appinventor
         ports: 
             - 8888:8888
+        # command: bash -c "pwd"
